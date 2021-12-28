@@ -16,7 +16,9 @@ class IsolateTimer {
   }
 
   static void _timer(SendPort sendPort) {
-    sendPort.send(DateTime.now());
+    Timer.periodic(const Duration(seconds: 1), (e) {
+      sendPort.send(DateTime.now());
+    });
   }
 
   void close() {

@@ -42,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void start() {
-    Timer.periodic(const Duration(seconds: 1), (e) {
-      _isolateTimer.createIsolate();
-    });
+    _isolateTimer.createIsolate();
   }
 
   void stop() {
@@ -78,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 8,
             ),
             const Text(
-              'A cada segundo uma thread é criada para isolar a requisição do timer atual.',
+              'A cada segundo é enviado uma mensagem com a informação do timer atual.',
               textAlign: TextAlign.center,
             ),
             const SizedBox(
